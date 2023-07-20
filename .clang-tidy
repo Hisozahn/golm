@@ -1,0 +1,82 @@
+---
+Checks: "
+  *,
+  -fuchsia-*,
+  -llvmlibc-*,
+  -altera-*,
+  -modernize-use-trailing-return-type,
+  -modernize-use-nodiscard,
+  -llvm-header-guard,
+  -google-runtime-references,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -misc-non-private-member-variables-in-classes,
+  -readability-redundant-access-specifiers,
+  -readability-implicit-bool-conversion,
+  -readability-identifier-naming,
+  -*braces-around-statements,
+  "
+
+WarningsAsErrors: ""
+HeaderFilterRegex: ""
+AnalyzeTemporaryDtors: false
+FormatStyle: file
+CheckOptions:
+  # https://releases.llvm.org/9.0.0/tools/clang/tools/extra/docs/clang-tidy/checks/bugprone-unhandled-self-assignment.html
+  - key: cert-oop54-cpp.WarnOnlyIfThisHasSuspiciousField
+    value: false
+  - key: google-readability-namespace-comments.ShortNamespaceLines
+    value: "0"
+  - key: llvm-qualified-auto.AddConstToQualified
+    value: true
+  - key: modernize-loop-convert.MinConfidence
+    value: reasonable
+  - key: modernize-loop-convert.NamingStyle
+    value: CamelCase
+  - key: modernize-pass-by-value.IncludeStyle
+    value: google
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.ConstexprVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionCase
+    value: camelBack
+  - key: readability-identifier-naming.GlobalConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.MacroDefinitionIgnoredRegexp
+    value: '^[A-Z]+(_[A-Z]+)*_$'
+  - key: readability-identifier-naming.ClassMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassMemberCaseSuffix
+    value: _
+  - key: readability-identifier-naming.MemberCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMemberSuffix
+    value: _
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+  - key: readability-identifier-naming.ParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.TypeAliasCase
+    value: lower_case
+  - key: readability-identifier-naming.TypeAliasSuffix
+    value: _t
+  - key: readability-identifier-naming.TypedefCase
+    value: lower_case
+  - key: readability-identifier-naming.TypedefSuffix
+    value: _t
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.IgnoreMainLikeFunctions
+    value: 1
+---
