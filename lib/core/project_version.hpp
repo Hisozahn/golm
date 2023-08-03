@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <tuple>
 
-namespace golm
+namespace gm
 {
 
 class ProjectVersion
@@ -19,9 +19,9 @@ public:
 
 private:
     using version_tuple_t = std::tuple<std::size_t, std::size_t, std::size_t>;
-    explicit ProjectVersion(version_tuple_t version_tuple);
+    explicit ProjectVersion(version_tuple_t version_tuple) noexcept;
     version_tuple_t version_tuple_;
 };
 
 
-} // namespace golm
+} // namespace gm

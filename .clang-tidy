@@ -24,11 +24,11 @@ FormatStyle: file
 CheckOptions:
   # https://releases.llvm.org/9.0.0/tools/clang/tools/extra/docs/clang-tidy/checks/bugprone-unhandled-self-assignment.html
   - key: cert-oop54-cpp.WarnOnlyIfThisHasSuspiciousField
-    value: false
+    value: "0"
   - key: google-readability-namespace-comments.ShortNamespaceLines
     value: "0"
   - key: llvm-qualified-auto.AddConstToQualified
-    value: true
+    value: "1"
   - key: modernize-loop-convert.MinConfidence
     value: reasonable
   - key: modernize-loop-convert.NamingStyle

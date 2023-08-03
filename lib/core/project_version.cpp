@@ -1,13 +1,13 @@
-#include "golm_lib.hpp"
+#include "project_version.hpp"
 
 #include <ostream>
 
-namespace golm
+namespace gm
 {
 
 const ProjectVersion ProjectVersion::current{std::tuple(0, 1, 0)};
 
-ProjectVersion::ProjectVersion(version_tuple_t version_tuple)
+ProjectVersion::ProjectVersion(version_tuple_t version_tuple) noexcept
     : version_tuple_(std::move(version_tuple))
 {
 }
@@ -33,4 +33,4 @@ std::ostream& operator<<(std::ostream& out, ProjectVersion const& project_versio
     return out;
 }
 
-} // namespace golm
+} // namespace gm
